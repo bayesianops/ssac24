@@ -5,7 +5,7 @@ data {
   array[N] int<lower = 0> successes;
 }
 transformed data {
-  vector[N] y = to_vector(successes) ./ to_vector(tries);
+  vector[N] y = to_vector(tries) ./ to_vector(successes);
 }
 parameters {
   real theta;
